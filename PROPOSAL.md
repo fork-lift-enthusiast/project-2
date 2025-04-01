@@ -27,6 +27,13 @@ AAU i should be able to show my full list of animes
 | GET         |   | '/animes/:id/edit'   |   | Read           |   | no                |   | shows the specific anime with prefilled form fields   |   | redirects to PUT '/animes/:id/edit'                                                                                |
 | PUT         |   | '/animes/:id/edit'   |   | Update         |   | yes               |   | puts the info user inputed to the edit form to the db |   | redirects to edited anime display page                                                                             |
 | DELETE      |   | 'animes/:id/delete'  |   | Delete         |   | yes               |   | deletes the selected anime                            |   | redirects to the full animes list                                                                                  |
+
+
+
+
+
+
+# timeline
 | day       | goal                                   |
 |-----------|----------------------------------------|
 | monday    | finish labs                            |
