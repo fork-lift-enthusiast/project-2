@@ -20,13 +20,15 @@
   "homepage": "https://github.com/fork-lift-enthusiast/project-2#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "chalk": "^5.4.1",
     "connect-mongo": "^5.1.0",
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "express-session": "^1.18.1",
     "method-override": "^3.0.0",
-    "mongoose": "^8.13.1"
+    "mongoose": "^8.13.1",
+    "morgan": "^1.10.0"
   },
   "type": "module"
 }

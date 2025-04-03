@@ -41,9 +41,9 @@ AAU i should be able to show my full list of animes
 | wednesday | setup make auth sign in functionality  |
 | thursday  | finish the rest of the logic and ejs   |
 | friday    | css styling                            |
-<img src="Screenshot 2025-04-01 at 2.41.19 PM.png" alt="ERD" style="width:100%;"/>
-<img src="welcome.jpg" alt="welcome page" style="width:100%;"/>
-<img src="log-in.jpg" alt="log in" style="width:100%;"/>
-<img src="sign-up.jpg" alt="sign up" style="width:100%;"/>
-<img src="anime-list.jpg" alt="ERD" style="width:100%;"/>
-<img src="add-anime.jpg" alt="add anime" style="width:100%;"/>
+<img src="assets/Screenshot 2025-04-01 at 2.41.19 PM.png" alt="ERD" style="width:100%;"/>
+<img src="assets/welcome.jpg" alt="welcome page" style="width:100%;"/>
+<img src="assets/log-in.jpg" alt="log in" style="width:100%;"/>
+<img src="assets/sign-up.jpg" alt="sign up" style="width:100%;"/>
+<img src="assets/anime-list.jpg" alt="ERD" style="width:100%;"/>
+<img src="assets/add-anime.jpg" alt="add anime" style="width:100%;"/>
