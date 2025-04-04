@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add anime</title>
+  </head>
+  <body>
+    <h1>Add a new anime to your list</h1>
+    <form action="/auth/animesList/addAnime" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required/>
+      <label for="rating">Rating:</label>
+      <input type="number" name="rating" id="rating" min="1" max="5" step="1" />
+      <label for="image">imageUrl: </label>
+      <input type="text" name="image" id="image" />
+      <label for="description">description: </label>
+      <input type="text" name="description" id="description" />
+      <button type="submit">Add anime</button>
+    </form>
+  </body>
+</html>

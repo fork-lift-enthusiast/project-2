@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import User from "./user";
+import User from "./user.js";
+const { Schema } = mongoose;
 const animeSchema = new mongoose.Schema({
   name: {
     type: String,
