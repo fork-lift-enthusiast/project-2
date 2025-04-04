@@ -71,12 +71,13 @@ export const signOutUser = (req, res) => {
 
 export const animesPage = async (req, res) => {
   const animeList = await Anime.find({ user_id: req.session.user._id });
-  res.render("auth/animesList", { animeList});
+  res.render("auth/animesList", { animeList });
 };
 
 export const addAnimePage = (req, res) => {
   res.render("auth/addAnime");
 };
+
 export const addAnime = async (req, res) => {
   try {
     const anime = await Anime.create({
@@ -93,5 +94,15 @@ export const addAnime = async (req, res) => {
   } catch (error) {
     console.error("Error Adding Anime", error);
     res.status(500).send("Server error");
+  }
+};
+
+export const showAnime = async (req, res) => {
+  try {
+    const anime = await Anime.findById(req.params.id);
+    res.render("auth/animeDetails", { anime });
+  } catch (error) {
+    console.error(error);
+    res.send("There was an error");
   }
 };

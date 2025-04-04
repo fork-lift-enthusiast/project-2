@@ -14,7 +14,9 @@
   <% if (animeList.length > 0) { %>
     <% animeList.forEach(anime => { %>
       <div class="anime-entry">
-        <h2><%= anime.name %></h2>
+        <a href="/auth/animesList/<%= anime._id %>">
+            <h1><%= anime.name %></h1>
+          </a>
         <p>Rating: <%= anime.rating %></p>
         <p>Description: <%= anime.description %></p>
         <% if (anime.image) { %>
