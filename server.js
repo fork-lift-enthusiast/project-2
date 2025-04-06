@@ -28,6 +28,7 @@ app.use(
     }),
   })
 );
+app.use(express.static('public'));
 app.use(passUserToView);
 
 app.use("/", router);
