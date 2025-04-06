@@ -1,0 +1,138 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Base Styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; /* Off white */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header & Footer for Retro Vibe */
+  header, footer {
+    background-color: #fffacd; /* Pastel yellow */
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  /* Navigation Links */
+  nav a {
+    margin: 0 10px;
+    font-weight: bold;
+    color: #ff69b4; /* Pastel pink */
+    text-decoration: none;
+  }
+  
+  /* Headings */
+  h1, h2, h3 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  /* Links */
+  a {
+    text-decoration: none;
+    color: #ff69b4; /* Pastel pink */
+  }
+  
+  /* Buttons */
+  button {
+    background-color: #ff69b4; /* Pastel pink */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ff85c1; /* Lighter pastel pink */
+  }
+  
+  /* Anime List Grid Layout */
+  .anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .anime-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Anime Detail Page */
+  .anime-detail {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+  }
+  
+  .anime-detail img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 4px;
+  }
+  
+  /* Edit Form Styles */
+  .edit-form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+  }
+  
+  .edit-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .edit-form input,
+  .edit-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+    .anime-grid {
+      grid-template-columns: 1fr;
+    }
+  }
