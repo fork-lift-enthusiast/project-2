@@ -13,6 +13,10 @@
     <img src="<%= anime.image %>" alt="<%= anime.name %> image" style="max-width: 200px;" />
   <% } %>
   <br>
+  <a href="/auth/animesList/<%= anime._id %>/edit">
+    <button>Edit Anime</button>
   <a href="/auth/animesList">Back to Anime List</a>
+  <form action="/auth/animesList/<%= anime._id %>?_method=DELETE" method="POST" style="display:inline;">
+    <button type="submit" >Delete Anime</button>
 </body>
 </html>

@@ -13,4 +13,7 @@ router.get("/animesList", isSignedIn, controllers.animesPage )
 router.get("/animesList/addAnime", isSignedIn, controllers.addAnimePage)
 router.post("/animesList/addAnime", isSignedIn, controllers.addAnime)
 router.get("/animesList/:id", isSignedIn, controllers.showAnime)
+router.get("/animesList/:id/edit", controllers.editAnimeForm);
+router.put("/animesList/:id", controllers.updateAnime);
+router.delete("/animesList/:id", controllers.deleteAnime);
 export default router;

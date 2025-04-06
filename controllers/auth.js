@@ -106,3 +106,50 @@ export const showAnime = async (req, res) => {
     res.send("There was an error");
   }
 };
+
+export const editAnimeForm = async (req, res) => {
+  try {
+    const anime = await Anime.findById(req.params.id);
+    if (!anime) {
+      return res.status(404).send("Anime not found");
+    }
+    res.render("auth/editAnime", { anime, user: req.session.user });
+  } catch (error) {
+    console.error("Error fetching anime for editing:", error);
+    res.status(500).send("Internal Server Error");
+  }
+};
+
+export const updateAnime = async (req, res) => {
+  try {
+    const updatedAnime = await Anime.findByIdAndUpdate(
+      req.params.id,
+      {
+        name: req.body.name,
+        rating: req.body.rating,
+        image: req.body.image,
+        description: req.body.description,
+      },
+      { new: true, runValidators: true } // Return the updated document and run validations
+    );
+    if (!updatedAnime) {
+      return res.status(404).send("Anime not found");
+    }
+    // After updating, redirect to the updated anime's detail page
+    res.redirect("/auth/animesList/" + req.params.id);
+  } catch (error) {
+    console.error("Error updating anime:", error);
+    res.status(500).send("Internal Server Error");
+  }
+};
+
+export const deleteAnime = async (req, res) => {
+    try {
+      await Anime.findByIdAndDelete(req.params.id);
+      // Redirect back to the list after successful deletion
+      res.redirect("/auth/animesList");
+    } catch (error) {
+      console.error("Error deleting anime:", error);
+      res.status(500).send("Internal Server Error");
+    }
+  };

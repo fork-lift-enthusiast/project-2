@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit <%= anime.name %></title>
+  </head>
+  <body>
+    <h1>Edit <%= anime.name %></h1>
+    <form action="/auth/animesList/<%= anime._id %>?_method=PUT" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="<%= anime.name %>" required/>
+
+      <label for="rating">Rating:</label>
+      <input type="number" name="rating" id="rating" value="<%= anime.rating %>
+      min="1" max="5" step=".5" />
+
+      <label for="image">Image URL:</label>
+      <input type="text" name="image" id="image" value="<%= anime.image %>" />
+
+      <label for="description">Description:</label>
+      <textarea name="description" id="description" rows="4" cols="50" required>
+<%= anime.description %></textarea
+      >
+
+      <button type="submit">Save Changes</button>
+    </form>
+    <br>
+    <a href="/auth/animesList/<%= anime._id %>">Cancel</a>
+  </body>
+</html>
