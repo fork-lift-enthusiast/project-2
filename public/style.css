@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-/* Basic Reset */
 * {
   margin-top: 0;
   margin-right: 0;
@@ -13,12 +12,11 @@
   box-sizing: border-box;
 }
 
-/* Global Body Styling */
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* centers content vertically */
+  justify-content: center;
   background-color: #f9f9f9;
   font-family: "Press Start 2P", cursive;
   color: #333333;
@@ -27,29 +25,27 @@ body {
   padding-bottom: 20px;
   padding-left: 20px;
   min-height: 100vh;
-  position: relative; /* for positioning decorative blobs */
+  position: relative;
   overflow-x: hidden;
 }
 
-/* CSS Variables for Blob Defaults */
 :root {
   --blob1-width: 220px;
   --blob1-height: 180px;
   --blob1-top: 8%;
   --blob1-left: 3%;
-  
+
   --blob2-width: 180px;
   --blob2-height: 140px;
   --blob2-bottom: 8%;
   --blob2-right: 5%;
-  
+
   --blob3-width: 150px;
   --blob3-height: 150px;
   --blob3-top: 50%;
   --blob3-right: 18%;
 }
 
-/* Decorative Blobs */
 .blob {
   position: fixed;
   opacity: 0.3;
@@ -60,29 +56,26 @@ body {
   animation-iteration-count: infinite;
 }
 
-/* Blob 1 */
 .blob1 {
   width: var(--blob1-width);
   height: var(--blob1-height);
-  background-color: #ffa2b0; /* Pastel pink */
+  background-color: #ffa2b0;
   top: var(--blob1-top);
   left: var(--blob1-left);
   clip-path: polygon(20% 0%, 80% 10%, 100% 50%, 70% 100%, 30% 90%, 0% 50%);
   animation-duration: 27s;
 }
 
-/* Blob 2 */
 .blob2 {
   width: var(--blob2-width);
   height: var(--blob2-height);
-  background-color: #fff493; /* Pastel yellow */
+  background-color: #fff493;
   bottom: var(--blob2-bottom);
   right: var(--blob2-right);
   clip-path: polygon(10% 20%, 90% 0%, 100% 70%, 60% 100%, 20% 80%, 0% 40%);
   animation-duration: 30s;
 }
 
-/* Blob 3 */
 .blob3 {
   width: var(--blob3-width);
   height: var(--blob3-height);
@@ -98,14 +91,13 @@ body {
     transform: translate(0px, 0px);
   }
   50% {
-    transform: translate(20px, 20px);
+    transform: translate(75px, 100px);
   }
   100% {
     transform: translate(0px, 0px);
   }
 }
 
-/* General Boxed Container (for pages like Home, Anime List, etc.) */
 .box-container {
   background-color: #ffffff;
   border-top-width: 3px;
@@ -137,7 +129,6 @@ body {
   text-align: center;
 }
 
-/* Dedicated Authentication Container (for Login/Signup) */
 .auth-container {
   background-color: #ffffff;
   border-top-width: 2px;
@@ -169,7 +160,6 @@ body {
   text-align: center;
 }
 
-/* Headings in Boxes */
 .box-container h1,
 .box-container h2,
 .auth-container h1,
@@ -178,7 +168,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Form Styling */
 form {
   display: flex;
   flex-direction: column;
