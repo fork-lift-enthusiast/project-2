@@ -1,27 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-
+/* Basic Reset */
 * {
-  margin: 0;
-  padding: 0;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
   box-sizing: border-box;
 }
 
+/* Global Body Styling */
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;  
-  background-color: #f9f9f9;  
-  font-family: 'Press Start 2P', cursive;
-  color: #333;
-  padding: 20px;
+  justify-content: center; /* centers content vertically */
+  background-color: #f9f9f9;
+  font-family: "Press Start 2P", cursive;
+  color: #333333;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
   min-height: 100vh;
-  position: relative;  
+  position: relative; /* for positioning decorative blobs */
   overflow-x: hidden;
 }
 
-
+/* CSS Variables for Blob Defaults */
 :root {
   --blob1-width: 220px;
   --blob1-height: 180px;
@@ -39,13 +49,18 @@ body {
   --blob3-right: 18%;
 }
 
+/* Decorative Blobs */
 .blob {
   position: fixed;
   opacity: 0.3;
   z-index: -1;
-  animation: float 25s linear infinite;
+  animation-name: float;
+  animation-duration: 25s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
+/* Blob 1 */
 .blob1 {
   width: var(--blob1-width);
   height: var(--blob1-height);
@@ -56,17 +71,18 @@ body {
   animation-duration: 27s;
 }
 
-
+/* Blob 2 */
 .blob2 {
   width: var(--blob2-width);
   height: var(--blob2-height);
-  background-color: #fff493; 
+  background-color: #fff493; /* Pastel yellow */
   bottom: var(--blob2-bottom);
   right: var(--blob2-right);
   clip-path: polygon(10% 20%, 90% 0%, 100% 70%, 60% 100%, 20% 80%, 0% 40%);
   animation-duration: 30s;
 }
 
+/* Blob 3 */
 .blob3 {
   width: var(--blob3-width);
   height: var(--blob3-height);
@@ -78,36 +94,82 @@ body {
 }
 
 @keyframes float {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(20px, 20px); }
-  100% { transform: translate(0, 0); }
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(20px, 20px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 
-
+/* General Boxed Container (for pages like Home, Anime List, etc.) */
 .box-container {
   background-color: #ffffff;
-  border: 3px solid #ffb6c1;
-  border-radius: 20px;
-  padding: 40px;
-  margin: 20px;
+  border-top-width: 3px;
+  border-right-width: 3px;
+  border-bottom-width: 3px;
+  border-left-width: 3px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #ffb6c1;
+  border-right-color: #ffb6c1;
+  border-bottom-color: #ffb6c1;
+  border-left-color: #ffb6c1;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
   width: 80%;
   max-width: 600px;
   text-align: center;
 }
 
-
+/* Dedicated Authentication Container (for Login/Signup) */
 .auth-container {
   background-color: #ffffff;
-  border: 2px solid #ffb6c1;
-  border-radius: 15px;
-  padding: 30px;
-  margin: 20px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #ffb6c1;
+  border-right-color: #ffb6c1;
+  border-bottom-color: #ffb6c1;
+  border-left-color: #ffb6c1;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
   width: 90%;
   max-width: 400px;
   text-align: center;
 }
 
-
+/* Headings in Boxes */
 .box-container h1,
 .box-container h2,
 .auth-container h1,
@@ -116,7 +178,7 @@ body {
   margin-bottom: 20px;
 }
 
-
+/* Form Styling */
 form {
   display: flex;
   flex-direction: column;
@@ -125,89 +187,176 @@ form {
 
 label {
   align-self: flex-start;
+  margin-top: 0px;
+  margin-right: 0px;
   margin-bottom: 5px;
+  margin-left: 0px;
   font-size: 1em;
 }
 
 input {
   width: 100%;
-  padding: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-top: 0px;
+  margin-right: 0px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  margin-left: 0px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #cccccc;
+  border-right-color: #cccccc;
+  border-bottom-color: #cccccc;
+  border-left-color: #cccccc;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
   font-family: inherit;
   font-size: 1em;
 }
 
-
 textarea {
   width: 100%;
-  padding: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-top: 0px;
+  margin-right: 0px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  margin-left: 0px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #cccccc;
+  border-right-color: #cccccc;
+  border-bottom-color: #cccccc;
+  border-left-color: #cccccc;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
   font-family: inherit;
   font-size: 1em;
   resize: vertical;
 }
 
-
 button {
   background-color: #ffb6c1;
-  color: #fff;
-  border: none;
-  padding: 16px 35px;
+  color: #ffffff;
+  border-style: none;
+  padding-top: 16px;
+  padding-right: 35px;
+  padding-bottom: 16px;
+  padding-left: 35px;
   font-size: 1.3em;
-  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-family: 'Press Start 2P', cursive;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  font-family: "Press Start 2P", cursive;
 }
 
 button:hover {
   background-color: #ff8da8;
 }
 
-
 nav {
   text-align: center;
+  margin-top: 0px;
+  margin-right: 0px;
   margin-bottom: 30px;
+  margin-left: 0px;
 }
 
 nav a {
   display: inline-block;
-  margin: 10px 15px;
-  padding: 18px 35px;
+  margin-top: 10px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  padding-top: 18px;
+  padding-right: 35px;
+  padding-bottom: 18px;
+  padding-left: 35px;
   background-color: #ffb6c1;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
-  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   font-size: 1.3em;
-  transition: background-color 0.3s ease;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
 }
 
 nav a:hover {
   background-color: #ff8da8;
 }
 
-
 .anime-entry {
   background-color: #ffffff;
-  border: 2px solid #ffb6c1;
-  border-radius: 15px;
-  padding: 20px;
-  margin: 15px 0;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #ffb6c1;
+  border-right-color: #ffb6c1;
+  border-bottom-color: #ffb6c1;
+  border-left-color: #ffb6c1;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  margin-top: 15px;
+  margin-right: 0px;
+  margin-bottom: 15px;
+  margin-left: 0px;
   text-align: left;
 }
 
-
 @media (max-width: 768px) {
   body {
-    padding: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
   }
-  .box-container, .auth-container {
+  .box-container,
+  .auth-container {
     width: 90%;
-    padding: 30px;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
   }
   .box-container h1,
   .box-container h2,
@@ -216,7 +365,10 @@ nav a:hover {
     font-size: 2em;
   }
   nav a {
-    padding: 14px 25px;
+    padding-top: 14px;
+    padding-right: 25px;
+    padding-bottom: 14px;
+    padding-left: 25px;
     font-size: 1em;
   }
 }
