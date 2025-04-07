@@ -1,23 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../../style.css" />
+
+  <link rel="stylesheet" href="/style.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= anime.name %> Details</title>
 </head>
 <body>
-  <h1><%= anime.name %></h1>
-  <p>Rating: <%= anime.rating %></p>
-  <p>Description: <%= anime.description %></p>
-  <% if (anime.image) { %>
-    <img src="<%= anime.image %>" alt="<%= anime.name %> image" style="max-width: 200px;" />
-  <% } %>
-  <br>
-  <a href="/auth/animesList/<%= anime._id %>/edit">
-    <button>Edit Anime</button>
-  <a href="/auth/animesList">Back to Anime List</a>
-  <form action="/auth/animesList/<%= anime._id %>?_method=DELETE" method="POST" style="display:inline;">
-    <button type="submit" >Delete Anime</button>
+  <script>
+    function randomBetween(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+    
+    function setRandomBlobStyles() {
+      const root = document.documentElement;
+    
+
+      root.style.setProperty('--blob1-width', randomBetween(180, 250) + 'px');
+      root.style.setProperty('--blob1-height', randomBetween(150, 220) + 'px');
+      root.style.setProperty('--blob1-top', randomBetween(5, 15) + '%');
+      root.style.setProperty('--blob1-left', randomBetween(0, 10) + '%');
+
+      root.style.setProperty('--blob2-width', randomBetween(150, 220) + 'px');
+      root.style.setProperty('--blob2-height', randomBetween(130, 200) + 'px');
+      root.style.setProperty('--blob2-bottom', randomBetween(5, 15) + '%');
+      root.style.setProperty('--blob2-right', randomBetween(0, 10) + '%');
+    
+
+      root.style.setProperty('--blob3-width', randomBetween(120, 180) + 'px');
+      root.style.setProperty('--blob3-height', randomBetween(120, 180) + 'px');
+      root.style.setProperty('--blob3-top', randomBetween(40, 60) + '%');
+      root.style.setProperty('--blob3-right', randomBetween(10, 25) + '%');
+    }
+    
+    setRandomBlobStyles();
+    </script>
+
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+  
+
+  <div class="box-container">
+    <h1><%= anime.name %> Details</h1>
+    <p>Rating: <%= anime.rating %></p>
+    <p>Description: <%= anime.description %></p>
+    <% if (anime.image) { %>
+      <img src="<%= anime.image %>" alt="<%= anime.name %> image" style="max-width: 200px;" />
+    <% } %>
+    <br>
+
+    <a href="/auth/animesList/<%= anime._id %>/edit">
+      <button>Edit Anime</button>
+    </a>
+<br>
+<br>
+
+
+    <form action="/auth/animesList/<%= anime._id %>?_method=DELETE" method="POST" style="display:inline;">
+      <button type="submit">Delete Anime</button>
+    </form>
+    <br>
+    <br>
+    <a href="/auth/animesList">Back to Anime List</a>
+  </div>
 </body>
 </html>

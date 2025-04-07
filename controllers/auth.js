@@ -97,7 +97,7 @@ export const addAnime = async (req, res) => {
   }
 };
 
-export const showAnime = async (req, res) => {
+export const showAnime = async (req, res) => {const animeList = await Anime.find({ user_id: req.session.user._id });
   try {
     const anime = await Anime.findById(req.params.id);
     res.render("auth/animeDetails", { anime });
@@ -130,12 +130,12 @@ export const updateAnime = async (req, res) => {
         image: req.body.image,
         description: req.body.description,
       },
-      { new: true, runValidators: true } // Return the updated document and run validations
+      { new: true, runValidators: true } 
     );
     if (!updatedAnime) {
       return res.status(404).send("Anime not found");
     }
-    // After updating, redirect to the updated anime's detail page
+
     res.redirect("/auth/animesList/" + req.params.id);
   } catch (error) {
     console.error("Error updating anime:", error);

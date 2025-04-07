@@ -1,32 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="../../style.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit <%= anime.name %></title>
-  </head>
-  <body>
+<head>
+  <link rel="stylesheet" href="/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit <%= anime.name %></title>
+</head>
+<body>
+  <script>
+    function randomBetween(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+    
+    function setRandomBlobStyles() {
+      const root = document.documentElement;
+    
+
+      root.style.setProperty('--blob1-width', randomBetween(180, 250) + 'px');
+      root.style.setProperty('--blob1-height', randomBetween(150, 220) + 'px');
+      root.style.setProperty('--blob1-top', randomBetween(5, 15) + '%');
+      root.style.setProperty('--blob1-left', randomBetween(0, 10) + '%');
+
+      root.style.setProperty('--blob2-width', randomBetween(150, 220) + 'px');
+      root.style.setProperty('--blob2-height', randomBetween(130, 200) + 'px');
+      root.style.setProperty('--blob2-bottom', randomBetween(5, 15) + '%');
+      root.style.setProperty('--blob2-right', randomBetween(0, 10) + '%');
+    
+
+      root.style.setProperty('--blob3-width', randomBetween(120, 180) + 'px');
+      root.style.setProperty('--blob3-height', randomBetween(120, 180) + 'px');
+      root.style.setProperty('--blob3-top', randomBetween(40, 60) + '%');
+      root.style.setProperty('--blob3-right', randomBetween(10, 25) + '%');
+    }
+    
+    setRandomBlobStyles();
+    </script>
+
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+  
+
+  <div class="box-container">
     <h1>Edit <%= anime.name %></h1>
     <form action="/auth/animesList/<%= anime._id %>?_method=PUT" method="POST">
       <label for="name">Name:</label>
       <input type="text" name="name" id="name" value="<%= anime.name %>" required/>
 
       <label for="rating">Rating:</label>
-      <input type="number" name="rating" id="rating" value="<%= anime.rating %>
-      min="1" max="5" step=".5" />
+      <input type="number" name="rating" id="rating" value="<%= anime.rating %>" min="1" max="5" step=".5" />
 
       <label for="image">Image URL:</label>
       <input type="text" name="image" id="image" value="<%= anime.image %>" />
 
       <label for="description">Description:</label>
-      <textarea name="description" id="description" rows="4" cols="50" required>
-<%= anime.description %></textarea
-      >
+      <textarea name="description" id="description" rows="4" cols="50" required><%= anime.description %></textarea>
 
       <button type="submit">Save Changes</button>
     </form>
     <br>
     <a href="/auth/animesList/<%= anime._id %>">Cancel</a>
-  </body>
+  </div>
+</body>
 </html>

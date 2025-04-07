@@ -7,6 +7,6 @@ router.get("/", (req, res) => {
 });
 
 router.use("/auth", userRoutes);
-// router.use("/anime", animeRoutes)
+
 
 export default router;

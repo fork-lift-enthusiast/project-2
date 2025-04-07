@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <link rel="stylesheet" href="../../style.css" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><%= user.username %>'s Anime List</title>
-</head>
-<body>
-  <h1><%= user.username %>'s Anime List</h1>
-  <a href="/auth/animesList/addAnime">
-    <button>Add anime</button>
-  </a>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= user.username %>'s Anime List</title>
+  </head>
+  <body>
+    <script>
+      function randomBetween(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+      
+      function setRandomBlobStyles() {
+        const root = document.documentElement;
+      
 
-  <% if (animeList.length > 0) { %>
-    <% animeList.forEach(anime => { %>
-      <div class="anime-entry">
-        <a href="/auth/animesList/<%= anime._id %>">
-            <h1><%= anime.name %></h1>
-          </a>
-        <p>Rating: <%= anime.rating %></p>
-        <p>Description: <%= anime.description %></p>
-        <% if (anime.image) { %>
-          <img src="<%= anime.image %>" alt="<%= anime.name %> image" style="max-width: 200px;"/>
-        <% } %>
-      </div>
-    <% }) %>
-  <% } else { %>
+        root.style.setProperty('--blob1-width', randomBetween(180, 250) + 'px');
+        root.style.setProperty('--blob1-height', randomBetween(150, 220) + 'px');
+        root.style.setProperty('--blob1-top', randomBetween(5, 15) + '%');
+        root.style.setProperty('--blob1-left', randomBetween(0, 10) + '%');
+      
+
+        root.style.setProperty('--blob2-width', randomBetween(150, 220) + 'px');
+        root.style.setProperty('--blob2-height', randomBetween(130, 200) + 'px');
+        root.style.setProperty('--blob2-bottom', randomBetween(5, 15) + '%');
+        root.style.setProperty('--blob2-right', randomBetween(0, 10) + '%');
+
+        root.style.setProperty('--blob3-width', randomBetween(120, 180) + 'px');
+        root.style.setProperty('--blob3-height', randomBetween(120, 180) + 'px');
+        root.style.setProperty('--blob3-top', randomBetween(40, 60) + '%');
+        root.style.setProperty('--blob3-right', randomBetween(10, 25) + '%');
+      }
+      
+      setRandomBlobStyles();
+      </script>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <h1><%= user.username %>'s Anime List</h1>
+    <br>
+    <a href="/auth/animesList/addAnime">
+      <button>Add anime</button>
+    </a>
+
+    <% if (animeList.length > 0) { %> <% animeList.forEach(anime => { %>
+    <div class="anime-entry">
+      <a href="/auth/animesList/<%= anime._id %>">
+        <h1><%= anime.name %></h1>
+      </a>
+      <br />
+      <p>Rating: <%= anime.rating %></p>
+      <p>Description: <%= anime.description %></p>
+      <% if (anime.image) { %>
+      <img
+        src="<%= anime.image %>"
+        alt="<%= anime.name %> image"
+        style="max-width: 200px"
+      />
+      <% } %>
+    </div>
+    <% }) %> <% } else { %>
     <p>You haven't added any anime yet. Start by clicking "Add anime"!</p>
-  <% } %>
-</body>
+    <% } %>
+  </body>
 </html>
